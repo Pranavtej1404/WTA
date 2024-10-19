@@ -73,8 +73,10 @@ document.getElementById('task-dashboard-form').addEventListener('submit', functi
 function displayTasks() {
     const taskList = document.getElementById('task-list');
     const todayTasks = document.getElementById('today-tasks');
+    const todayIncompleteTasks=document.getElementById('today-incomplete-tasks')
     taskList.innerHTML = '';
     todayTasks.innerHTML = '';
+    todayIncompleteTasks.innerHTML='';
 
     const today = new Date().toISOString().split('T')[0];
 
@@ -99,6 +101,17 @@ function displayTasks() {
                 <div class="task-priority">Priority: ${formatPriority(task.priority)}</div>
             `;
             todayTasks.appendChild(todayLi);
+        }
+        if (!task.completed) {
+            if(task.due===today){
+                const todayIncompleteli=document.createElement('li');
+                todayIncompleteli.innerHTML=`<div class="task-title">${task.title}</div>
+                <div class="task-priority">Priority: ${formatPriority(task.priority)}</div>
+            `;
+            todayIncompleteTasks.appendChild(todayIncompleteli);
+            }
+            
+           
         }
     });
 }
