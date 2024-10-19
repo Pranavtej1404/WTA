@@ -162,3 +162,9 @@ button:hover {
     margin-top: 1em;
     font-size: 1.2em;
 }
+.todaytasks{
+    padding: 1em;
+    border-radius: 12px;
+    background-color: #464646;
+    color:white;
+}
