@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity App</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><button onclick="showSection('dashboard')">Dashboard</button></li>
+            <li><button onclick="showSection('tasks')">Task Management</button></li>
+            <li><button onclick="showSection('time')">Time Management</button></li>
+            <li><button onclick="showSection('stress')">Stress Reduction</button></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section">
+        <h1>Dashboard</h1>
+        <div class="overview">
+            <h2>Today's Tasks</h2>
+            <ul id="today-tasks">
+                <!-- Dynamically populated -->
+            </ul>
+        </div>
+        <div class="progress-tracker">
+            <h2>Progress</h2>
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <p id="progress-text">0% completed</p>
+        </div>
+        <button id="add-task-dashboard">Add Task</button>
+    </section>
+
+    <!-- Task Management Section -->
+    <section id="tasks" class="section hidden">
+        <h1>Task Management</h1>
+        <button id="add-task">Add New Task</button>
+        <ul id="task-list">
+            <!-- Dynamically populated -->
+        </ul>
+    </section>
+
+    <!-- Time Management Section -->
+    <section id="time" class="section hidden">
+        <h1>Time Management</h1>
+        <div class="time-blocking">
+            <h2>Time Blocking</h2>
+            <div id="calendar">
+                <!-- Simple calendar or time blocks can be added here -->
+                <p>Time Blocking feature coming soon!</p>
+            </div>
+        </div>
+        <div class="pomodoro">
+            <h2>Pomodoro Timer</h2>
+            <div id="pomodoro-timer">
+                <span id="timer">25:00</span>
+                <button id="start-pomodoro">Start</button>
+                <button id="reset-pomodoro">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stress Reduction Section -->
+    <section id="stress" class="section hidden">
+        <h1>Stress Reduction</h1>
+        <div class="mindfulness">
+            <h2>Mindfulness Timer</h2>
+            <div id="mindfulness-timer">
+                <input type="number" id="mindfulness-duration" placeholder="Minutes" min="1">
+                <button id="start-mindfulness">Start</button>
+                <button id="reset-mindfulness">Reset</button>
+                <p id="mindfulness-display">00:00</p>
+            </div>
+        </div>
+        <div class="mood-tracker">
+            <h2>Mood Tracker</h2>
+            <input type="range" id="mood-level" min="1" max="5">
+            <label for="mood-level">Mood Level (1-5)</label>
+            <button id="save-mood">Save Mood</button>
+            <p id="mood-display">Your mood level will appear here.</p>
+        </div>
+    </section>
+
+    <!-- Task Modal -->
+    <div id="task-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('task-modal')">&times;</span>
+            <h2>Add New Task</h2>
+            <form id="task-form">
+                <label for="task-title">Title:</label>
+                <input type="text" id="task-title" required>
+
+                <label for="task-desc">Description:</label>
+                <textarea id="task-desc"></textarea>
+
+                <label for="task-due">Due Date:</label>
+                <input type="date" id="task-due" required>
+
+                <label for="task-priority">Priority:</label>
+                <select id="task-priority">
+                    <option value="urgent-important">Urgent & Important</option>
+                    <option value="important">Important but Not Urgent</option>
+                    <option value="urgent">Urgent but Not Important</option>
+                    <option value="low">Not Urgent & Not Important</option>
+                </select>
+
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Task Dashboard Modal -->
+    <div id="task-dashboard-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('task-dashboard-modal')">&times;</span>
+            <h2>Add New Task</h2>
+            <form id="task-dashboard-form">
+                <label for="dashboard-task-title">Title:</label>
+                <input type="text" id="dashboard-task-title" required>
+
+                <label for="dashboard-task-desc">Description:</label>
+                <textarea id="dashboard-task-desc"></textarea>
+
+                <label for="dashboard-task-due">Due Date:</label>
+                <input type="date" id="dashboard-task-due" required>
+
+                <label for="dashboard-task-priority">Priority:</label>
+                <select id="dashboard-task-priority">
+                    <option value="urgent-important">Urgent & Important</option>
+                    <option value="important">Important but Not Urgent</option>
+                    <option value="urgent">Urgent but Not Important</option>
+                    <option value="low">Not Urgent & Not Important</option>
+                </select>
+
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../script/home.js"></script>
+</body>
+</html>
