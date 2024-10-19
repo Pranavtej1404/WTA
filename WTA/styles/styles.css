@@ -87,7 +87,7 @@ button:hover {
     border-radius: 5px;
 }
 
-#task-list li .task-title {
+.task-title {
     font-weight: bold;
 }
 
@@ -167,4 +167,7 @@ button:hover {
     border-radius: 12px;
     background-color: #464646;
     color:white;
+}
+.tnav{
+    padding-bottom: 1rem;
 }
