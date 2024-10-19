@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productivity App</title>
+    <title>Zeitmanagement</title>
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
@@ -20,14 +20,7 @@
     <!-- Dashboard Section -->
     <section id="dashboard" class="section">
         <h1>Dashboard</h1>
-        <div class="overview">
-            <h2>Today's Tasks</h2>
-              <div class="todaytasks">
-                <ul id="today-tasks">
-                    <!-- Dynamically populated -->
-                </ul>
-              </div>
-        </div>
+        
         <div class="progress-tracker">
             <h2>Progress</h2>
             <div id="progress-bar">
@@ -35,6 +28,39 @@
             </div>
             <p id="progress-text">0% completed</p>
         </div>
+        <div class="overview">
+            <h2>Today's Tasks</h2>
+            <div class="todaytasks">
+                <ul id="today-tasks">
+                    <!-- Dynamically populated -->
+                </ul>
+            </div>
+        </div>
+        <!--incomplete tasks
+        <div class="overview">
+            <h2>Incomplete tasks</h2>
+            <div class="tnav">
+                <button>Today</button>
+                <button>week</button>
+                <button>Month</button>
+                <button>Year</button>
+            </div>
+            <div class="todaytasks">
+                <ul id="today-incomplete-tasks" class="incomplete-today">
+
+                </ul>
+                <ul id="week-incomplete-tasks" class="incomplete-today">
+                    
+                </ul>
+                <ul id="month-incomplete-tasks" class="incomplete-today">
+                    
+                </ul>
+                <ul id="year-incomplete-tasks" class="incomplete-today">
+                    
+                </ul>
+            </div>
+        </div>
+    -->
         <button id="add-task-dashboard">Add Task</button>
     </section>
 
